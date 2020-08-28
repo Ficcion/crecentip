@@ -9,19 +9,20 @@ const { dbConeccion } = require('./database/config');
 const app = express();
 
 // CORS
-app.use(cors(opciones));
+app.use(cors());
+// app.use(cors(opciones));
 
-var opciones = {
-    origin: (origin, callback) => {
-        if (process.env.PERMITIDO.indexOf(origin) !== -1) {
-            callback(null, true);
+// var opciones = {
+//     origin: (origin, callback) => {
+//         if (process.env.PERMITIDO.indexOf(origin) !== -1) {
+//             callback(null, true);
 
-        } else {
+//         } else {
 
-            callback(new Error('No permitido por el CORS.'))
-        }
-    }
-};
+//             callback(new Error('No permitido por el CORS.'))
+//         }
+//     }
+// };
 
 // Lectura Parse del body
 app.use( express.json() );
