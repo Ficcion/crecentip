@@ -9,7 +9,7 @@ const { dbConeccion } = require('./database/config');
 const app = express();
 
 // CORS
-app.use(cors());
+app.use( cors() );
 // app.use(cors(opciones));
 
 // var opciones = {
